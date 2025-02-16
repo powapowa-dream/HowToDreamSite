@@ -44,35 +44,36 @@
 
     <p id="serif"></p>
 
+    <!-- ここで最初にユーザー名の入力欄を設置 -->
+    <div>このままで問題なければ、未入力で先へお進みください。</div>
+    <input type="text" id="userName" placeholder="夢見るお嬢さん" oninput="showSerif()">
+
     <script>
         function showSerif() {
             const selectCharacter = document.getElementById("characterSelect");
-
-            const userInput = document.getElementById("userName");
-
             const serifBox = document.getElementById("serif");
-
-            const selectedCharacter = selectCharacter.value;
-            const userName = userInput.value || "夢見るお嬢さん";
+            const userName = document.getElementById("userName").value || "夢見るお嬢さん";
 
             // キャラクターごとの文章
             const serifs = {
-                "kanata": `あああ`,
+                "kanata": `
+                    <img src="https://github.com/powapowa-dream/HowToDreamSite/blob/main/%E5%A4%A2%E9%87%8E.png?raw=true" 
+                    alt="キャラクター画像" width="300"><br>
+                    ようこそ、${userName}。なんとお呼びしたらよろしいでしょうか？
+                `,
 
-                "kyou": `キョウ`,
+                "kyou": `キョウ: ${userName}、お前か？`,
 
-                "miyuki": `ミユキ`,
-
+                "miyuki": `ミユキ: やあ、${userName}。ここで会えるとは思わなかったな。`,
             };
 
-            // 選択されたキャラクターのセリフを表示（選択なしなら空）
-            serifBox.innerHTML = serifs[selectedCharacter] || "";
+            // 選択されたキャラクターのセリフを表示
+            serifBox.innerHTML = serifs[selectCharacter.value] || "";
         }
     </script>
 
-    <div style="margin-bottom: 10px;"></div>
-
 </body>
+
 
 <!-- <span
     style="display:block; box-shadow: 0px 0px 0px 10px #ffcccc; margin:2em 0; padding:0.2em 0.5em; border:dashed 2px #FCFCFC; color: #FFFFFF;background-color:#ffcccc;"
