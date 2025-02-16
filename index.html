@@ -58,8 +58,11 @@
             // キャラクターごとの文章
             const serifs = {
                 "kanata": `
-                <img src="https://github.com/powapowa-dream/HowToDreamSite/blob/main/%E5%A4%A2%E9%87%8E.png?raw=true" alt="キャラクター画像" width="300"><br>
+                
+ようこそ、${userName}。なんとお呼びしたらよろしいでしょうか？<br>
 <br>
+<div>このままで問題なければ、未入力で先へお進みください。</div>
+    <input type="text" id="userName" placeholder="夢見るお嬢さん" oninput="showSerif()">
     `,
 
                 "kyou": `キョウ`,
