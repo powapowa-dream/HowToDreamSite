@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夢サイトのつくりかた</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            margin: 20px;
+        }
+
+        #serif {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<span style="display:block; margin: 2em 0; padding: 0.5em 1em; border: solid 3px #ffa5df; border-radius: 8px"><span
+        style="position:relative; display: inline-block; top: -20px; left: 5px; padding: 0 9px; font-size: 19px; color: #ffa5df; background: #FCFCFC; font-weight: bold;">ꕤ夢サイトのつくりかたꕤ</span>
+    <div>&emsp;自由度の高い理想の夢小説を求めて、私はとあるサイトを訪れた。<br>
+        右も左もわからず<ruby>戸惑<rt>とまど</rt></ruby>っていると、どこからか声が聞こえる。<br>
+        その声は——</div>
+
+    <div style="margin-bottom: 10px;"></div>
+
+    <select id="characterSelect" onchange="showSerif()">
+        <option value="">-- 刀剣男士選択 --</option>
+        <option value="kara">大倶利伽羅</option>
+        <option value="goke">後家兼光</option>
+        <option value="turu">鶴丸</option>
+    </select>
+
+    <div style="margin-bottom: 10px;"></div>
+
+</span>
+
+<!-- <body>
+
+    <p id="serif"></p>
+
+    <script>
+        function showSerif() {
+            const selectCharacter = document.getElementById("characterSelect");
+            const selectSensitive = document.getElementById("sensitiveSelect");
+
+            const danshiInput = document.getElementById("danshiName");
+            const userInput = document.getElementById("userName");
+            const menuInput = document.getElementById("menuName");
+
+            const serifBox = document.getElementById("serif");
+
+            const selectedCharacter = selectCharacter.value;
+            const selectedSensitive = selectSensitive.value;
+            const danshiName = danshiInput.value || "だーりん";
+            const userName = userInput.value || "あるじ";
+            const menuName = menuInput.value || "オムライス";
+
+            // キャラクターごとの文章
+            const serifs = {
+                "kara": `
+<div style="font-size: 25px; color:#000000; font-weight: bold;">ご馳走様でした</div>
+
+        気付けばとっぷりと日が暮れ、<ruby>夕餉<rt>ゆうげ</rt></ruby>の時刻はとうに過ぎている。厨へ行けば、なにか食べ物があるだろうか。そう考えていると、障子越しに声をかけられた。
+    `,
+
+                "goke": `後家兼光「<ruby>${userName}<rt>あるじ</rt></ruby>、今日も素敵だね。」`,
+
+                "turu": `鶴丸「よっ、${userName}！驚いたか？」`,
+
+                "mituyo": `大典太「あぁ、${userName}……。」`,
+
+                "tagen": `薬研「大将、今日の晩飯は${menuName}か？」`,
+
+                "hudo": `不動「主！${menuName}を食べたら、一緒に酒でも飲むか？」`,
+            };
+
+            // 選択されたキャラクターのセリフを表示（選択なしなら空）
+            serifBox.innerHTML = serifs[selectedCharacter] || "";
+        }
+    </script>
+
+    <div style="margin-bottom: 10px;"></div>
+
+</body>
+
+<span
+    style="display:block; box-shadow: 0px 0px 0px 10px #ffcccc; margin:2em 0; padding:0.2em 0.5em; border:dashed 2px #FCFCFC; color: #FFFFFF;background-color:#ffcccc;"
+    font-size: 12px>
+    <div style="font-size: 18px; font-weight: bold;">ꕤこのサイトの作り方ꕤ</div>
+    <div style="margin-bottom: 10px;"></div>
+    <div>
+        HTML、CSS、JavaScriptをGitHubのPagesで公開しています。
+    </div>
+    <div style="margin-bottom: 10px;"></div>
+    <div>
+        プログラミング勉強中の初心者なので、細かい解説や作成のご相談等はお受け致しかねますが。私もオープンソース（先輩エンジニアさんたちの便利な作品を無料で使わせていただける文化）に救われてきたので、当サイトのコード（Ctrl+U（Windows）または⌘-Option-U（Mac）で表示のようです）を参考にご自身のサイトをお作りいただいてOKです（動作の保証は致しかねます）（※自己責任でご利用ください）（一切の責任を負いかねます）（二次創作の場合は各公式様のガイドラインに合わせてご利用ください）。自分用のため拙い箇所が多いと思いますので適宜改良ください。
+    </div>
+    <div style="margin-bottom: 10px;"></div>
+    <div>
+        参照元として弊サークル名の明記は任意（必須ではない）ですが、<a href="https://twitter.com/hoa1032" target="_blank"
+            style="color:#ffa3a3; text-decoration: none;"><u>𝕏</u></a>や当サイトのURL付きでご紹介いただけるとモチベが上がります。
+    </div>
+    <div style="margin-bottom: 10px;"></div>
+    皆さまが素敵な夢活をエンジョイできますように！
+    <div style="margin-bottom: 10px;"></div>
+    2025.2.3&emsp;サークル「<a href="https://x.com/search?q=%23%E5%A4%A2%E6%81%8B%E4%B8%87%E8%8F%AF%E9%8F%A1&src=typed_query"
+        target="_blank" style="color:#ffa3a3; text-decoration: none;"><u>夢恋万華鏡</u></a>」
+    <div style="margin-bottom: 10px;"></div>
+
+    <div style="margin-bottom: 6px;"></div>
+
+</span> -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWTRRZWJDF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EWTRRZWJDF');
+</script>
+
+</html>
