@@ -40,44 +40,34 @@
 
 </span>
 
-<!-- <body>
+<body>
 
     <p id="serif"></p>
 
     <script>
         function showSerif() {
             const selectCharacter = document.getElementById("characterSelect");
-            const selectSensitive = document.getElementById("sensitiveSelect");
 
-            const danshiInput = document.getElementById("danshiName");
             const userInput = document.getElementById("userName");
-            const menuInput = document.getElementById("menuName");
 
             const serifBox = document.getElementById("serif");
 
             const selectedCharacter = selectCharacter.value;
-            const selectedSensitive = selectSensitive.value;
-            const danshiName = danshiInput.value || "だーりん";
-            const userName = userInput.value || "あるじ";
-            const menuName = menuInput.value || "オムライス";
+            const userName = userInput.value || "夢見るお嬢さん";
 
             // キャラクターごとの文章
             const serifs = {
-                "kara": `
-<div style="font-size: 25px; color:#000000; font-weight: bold;">ご馳走様でした</div>
-
-        気付けばとっぷりと日が暮れ、<ruby>夕餉<rt>ゆうげ</rt></ruby>の時刻はとうに過ぎている。厨へ行けば、なにか食べ物があるだろうか。そう考えていると、障子越しに声をかけられた。
+                "kanata": `
+ようこそ、${userName}。なんとお呼びしたらよろしいでしょうか？<br>
+<br>
+<div>このままで問題なければ、未入力で先へお進みください。</div>
+    <input type="text" id="userName" placeholder="夢見るお嬢さん" oninput="showSerif()">
     `,
 
-                "goke": `後家兼光「<ruby>${userName}<rt>あるじ</rt></ruby>、今日も素敵だね。」`,
+                "kyou": `キョウ`,
 
-                "turu": `鶴丸「よっ、${userName}！驚いたか？」`,
+                "miyuki": `ミユキ`,
 
-                "mituyo": `大典太「あぁ、${userName}……。」`,
-
-                "tagen": `薬研「大将、今日の晩飯は${menuName}か？」`,
-
-                "hudo": `不動「主！${menuName}を食べたら、一緒に酒でも飲むか？」`,
             };
 
             // 選択されたキャラクターのセリフを表示（選択なしなら空）
@@ -89,7 +79,7 @@
 
 </body>
 
-<span
+<!-- <span
     style="display:block; box-shadow: 0px 0px 0px 10px #ffcccc; margin:2em 0; padding:0.2em 0.5em; border:dashed 2px #FCFCFC; color: #FFFFFF;background-color:#ffcccc;"
     font-size: 12px>
     <div style="font-size: 18px; font-weight: bold;">ꕤこのサイトの作り方ꕤ</div>
